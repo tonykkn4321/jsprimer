@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Listing 4-6:
+        console.log("Hello");
+        console.log("Apples");
+        console.log("This is a statement");
+        console.log("This is also a statement");
+
+        // Listing 4-10:
+        function myFunc(name, weather="raining", ...extraArgs) {
+            console.log("Hello " + name + ".");
+            console.log("It is " + weather + " today.");
+            for (let i = 0; i < extraArgs.length; i++) {
+                console.log("Extra Arg:" + extraArgs[i]);
+            }
+        }
+        myFunc("Adam", "sunny", "one", "two", "three");
+
+        // Listing 4-12:
+        function returnFunc(nameFunction) {
+            return ("Hello " + nameFunction() + ".");
+        }
+        console.log(returnFunc(function () {
+            return "Adam";
+        }));
+
+        // Listing 4-13:
+        function printName(nameFunction, printFunction) {
+            printFunction(returnFunc(nameFunction));
+
+        }
+        printName(function () { return "Adam_1" }, console.log);
+
+        // Listing 4-14:
+        const arrowFunc = (nameFunction) => ("Hello " + nameFunction() + ".");
+        const printArrowName = (nameFunction, printFunction) =>
+            printFunction(arrowFunc(nameFunction));
+        printArrowName(function () { return "Adam_@" }, console.log);
+
+    </script>
+</body>
+</html>

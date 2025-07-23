@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let myArray = [100, "Adam", true];
+        // Listing 4-29:
+        console.log(`Index 0: ${myArray[0]}`);
+
+        // Listing 4-30:
+        myArray[0] = "Tuesday";
+        console.log(`Index 0: ${myArray[0]}`);
+
+        // Listing 4-31:
+        for (let i = 0; i < myArray.length; i++) {
+            console.log(`Index ${i}: ${myArray[i]}`);
+        }
+        console.log("---");
+        myArray.forEach((value, index) => console.log(`Index ${index}: ${value}`));
+
+        // Listing 4-32:
+         function printItems(numValue, stringValue, boolValue) {
+            console.log(`Number: ${numValue}`);
+            console.log(`String: ${stringValue}`);
+            console.log(`Boolean: ${boolValue}`);
+        }
+        myArray = [100, "Adam", true];
+        printItems(myArray[0], myArray[1], myArray[2]);
+        printItems(...myArray);
+
+        // Listing 4-33:
+        let myOtherArray = [200, "Bob", false, ...myArray];
+        myOtherArray.forEach((value, index) => console.log(`Index ${index}: ${value}`));
+
+        // Listing 4-34:
+         let products = [
+            { name: "Hat", price: 24.5, stock: 10 },
+            { name: "Kayak", price: 289.99, stock: 1 },
+            { name: "Soccer Ball", price: 10, stock: 0 },
+            { name: "Running Shoes", price: 116.50, stock: 20 }
+        ];
+
+        let totalValue = products
+            .filter(item => item.stock > 0)
+            .reduce((prev, item) => prev + (item.price * item.stock), 0);
+        console.log(`Total value: $${totalValue.toFixed(2)}`);
+
+    </script>
+</body>
+</html>

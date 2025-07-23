@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Listing 4-15:
+        function messageFunction(name, weather) {
+            let message = "Hello, Adam";
+            if (weather == "sunny") {
+                let message = "It is a nice day";
+                console.log(message);
+            } else {
+                let message = "It is " + weather + " today";
+                console.log(message);
+            }
+            console.log(message);
+        }
+        messageFunction("Adam", "raining");
+
+        // Listing 4-16:
+        function message_1Function(name, weather) {
+            var message_1 = "Hello, Adam";
+            if (weather == "sunny") {
+                var message_1 = "It is a nice day";
+                console.log(message_1);
+            } else {
+                var message_1 = "It is " + weather + " today";
+                console.log(message_1);
+            }
+            console.log(message_1);
+        }
+        message_1Function("Adam", "raining");
+
+        //  USING VARIABLE CLOSURE:
+        function myFunc(name) {
+            let myLocalVar = "sunny";
+            let innerFunction = function () {
+                return ("Hello " + name + ". Today is " + myLocalVar + ".");
+            }
+            return innerFunction();
+        }
+        console.log(myFunc("Adam"));
+
+        //  Template String, Listing 4-19:
+        function message_2Function(weather) {
+            let message_2 = `It is ${weather} today`;
+                console.log(message_2);
+            }
+            message_2Function("raining");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Listing 4-21:
+        let name = "Adam";
+        if (name == "Adam") {
+            console.log("Name is Adam");
+        } else if (name == "Jacqui") {
+            console.log("Name is Jacqui");
+        } else {
+            console.log("Name is neither Adam or Jacqui");
+        }
+
+        switch (name) {
+            case "Adam":
+                console.log("Name is Adam");
+                break;
+            case "Jacqui":
+                console.log("Name is Jacqui");
+                break;
+            default:
+                console.log("Name is neither Adam or Jacqui");
+                break;
+        }
+
+        // Listing 4-22:
+        let firstVal = 5;
+        let secondVal = "5";
+        if (firstVal == secondVal) {
+            console.log("They are the same");
+        } else {
+            console.log("They are NOT the same");
+        }
+
+        // Listing 4-23:
+        if (firstVal === secondVal) {
+            console.log("They are the same");
+        } else {
+            console.log("They are NOT the same");
+        }
+
+        // Listing 4-24:
+        let myData1 = 5 + 5;
+        let myData2 = 5 + "5";
+        console.log("Result 1:" + myData1);
+        console.log("Result 2:" + myData2);
+
+        //  Listing 4-25:
+        let myData3 = (5).toString() + String(5);
+        console.log("Result 3:" + myData3);
+
+        //  Listing 4-26:
+        let firstVal_1 = "5";
+        let secondVal_1 = "5";
+        let result = Number(firstVal_1) + Number(secondVal_1);
+        console.log("Result:" + result);
+
+    </script>
+</body>
+</html>
