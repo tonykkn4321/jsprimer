@@ -8,7 +8,64 @@
 <body>
     <script>
         
-        
+        // Listing 4-35: Creating an Object 
+        let myData = new Object();
+        myData.name = "Adam";
+        myData.weather = "sunny";
+        console.log(`Hello ${myData.name}.`);
+        console.log(`Today is ${myData.weather}.`);
+
+        // Listing 4-36. Using the Object Literal Format:
+        let myData_1 = {
+            name: "Adam",
+            weather: "sunny"
+        };
+        console.log(`Hello ${myData_1.name}.`);
+        console.log(`Today is ${myData_1.weather}.`)
+
+        // Listing 4-37. Using a Variable in an Object Literal:
+        let name = "Adam"
+        let myData_2 = {
+            name,
+            weather: "sunny"
+        };
+        console.log(`Hello ${myData_2.name}.`);
+        console.log(`Today is ${myData_2.weather}.`);
+
+        // Listing 4-38. Adding Methods to an Object:
+        let myData_4 = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages: function () {
+                console.log(`Hello ${myData_4.name}.`);
+                console.log(`Today is ${myData_4.weather}.`);
+            }
+        };
+        myData_4.printMessages();
+
+        // Listing 4-39. Defining a Method:
+        let myData_5 = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages() {
+                console.log(`Hello ${myData_5.name}.`);
+                console.log(`Today is ${myData_5.weather}.`);
+            }
+        };
+        myData_5.printMessages();
+
+        // Listing 4-40. Copying Object Properties:
+        let myData_6 = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages() {
+                console.log(`Hello ${myData_6.name}.`);
+                console.log(`Today is ${myData_6.weather}.`);
+            }
+        };
+        let secondObject = {};
+        Object.assign(secondObject, myData_6);
+        secondObject.printMessages();
 
     </script>
 </body>
